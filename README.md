@@ -1,5 +1,5 @@
 # BotFramework WebChat IE11 Bug Sample Project
-This project is built to reproduce the issue of the BotFramework Webchat component not working with IE11
+This project is built to reproduce the issue of the BotFramework Webchat embed not working with IE11
 
 To reproduce: replace the placeholders in botframework-ie11-bug.html with your user name and direct line secret.  Opening in Chrome or FireFox, the component works without issue.  In IE11 there are a number of console errors:
 
