@@ -1,4 +1,4 @@
-<html>
+<!-- <html>
    <body>
       <div id="webchat" role="main"></div>
       <script src="https://cdn.botframework.com/botframework-webchat/latest/webchat.js"></script>
@@ -6,10 +6,10 @@
          window.WebChat.renderWebChat(
             {
                directLine: window.WebChat.createDirectLine({
-                  token: 'YOUR_DIRECT_LINE_TOKEN'
+                  token: '<secret token>'
                }),
-               userID: 'YOUR_USER_ID',
-               username: 'Web Chat User',
+               userID: '<user email>',
+               username: '<user name>',
                locale: 'en-US',
                botAvatarInitials: 'WC',
                userAvatarInitials: 'WW'
@@ -18,4 +18,47 @@
          );
       </script>
    </body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <title>Web Chat: Full-featured bundle with ES5 polyfills</title>
+
+    <script src="https://cdn.botframework.com/botframework-webchat/latest/webchat-es5.js"></script>
+    <style>
+      html, body { height: 100% }
+      body { margin: 0 }
+
+      #webchat {
+        height: 100%;
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="webchat" role="main"></div>
+    <script>
+      // window.fetch('https://webchat-mockbot.azurewebsites.net/directline/token', { method: 'POST' })
+      //   .then(function (res) {
+      //     return res.json();
+      //   })
+      //   .then(function (json) {
+          const token = '<secret token>';
+
+          window.WebChat.renderWebChat({
+            directLine: window.WebChat.createDirectLine({
+              token: token
+            }),
+            userID: '<user email>',
+            username: '<user name>',
+            locale: 'en-US',
+            botAvatarInitials: 'WC',
+            userAvatarInitials: 'WW'
+          }, document.getElementById('webchat'));
+
+          document.querySelector('#webchat > *').focus();
+      //   });
+    </script>
+  </body>
 </html>
